@@ -18,7 +18,7 @@ then, `require` it in your project, i.e.
 const { strIsIn } = require('@igor.dvlpr/str-is-in')
 
 // #1 - use default Comparator, non-existent string, full match
-console.log(strIsIn('bin', ['abc', 'cde', 'def', 'binary'])  // prints false
+console.log(strIsIn('bin', ['abc', 'cde', 'def', 'binary']))  // prints false
 
 // #2 - use default Comparator, existing string, full match
 console.log(strIsIn('bin', ['abc', 'cde', 'bin', 'adc'])) // prints true
