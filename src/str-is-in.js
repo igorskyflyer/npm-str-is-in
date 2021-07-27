@@ -38,7 +38,7 @@ function strIsIn(value, entries, comparator) {
 }
 
 /**
- * Provides ways for finding matches.
+ * Provides methods for finding matches.
  */
 const findMatch = {
   /**
