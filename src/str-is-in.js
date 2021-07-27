@@ -38,59 +38,60 @@ function strIsIn(value, entries, comparator) {
 }
 
 /**
- * Performs a case-insensitive and full-matching search for a given value
- * inside an array of values and returns the found match
- * (with the original case being preserved). If none is found
- * an empty string is returned.
- *@public
- * @param {string} value
- * @param {string[]} entries
- * @returns {string}
+ * Provides ways for finding matches.
  */
-function findMatch(value, entries) {
-  if (!value || !entries || !(entries instanceof Array)) {
-    return ''
-  }
-
-  const count = entries.length
-
-  for (let i = 0; i < count; i++) {
-    if (insensitiveMatchFull(entries[i], value)) {
-      return entries[i]
+const findMatch = {
+  /**
+   * Performs a case-insensitive and full-matching search for a given value
+   * inside an array of values and returns the found match
+   * (with the original case being preserved). If none is found
+   * an empty string is returned.
+   * @param {string} value
+   * @param {string[]} entries
+   * @returns {string}
+   */
+  full: (value, entries) => {
+    if (!value || !entries || !(entries instanceof Array)) {
+      return ''
     }
-  }
 
-  return ''
-}
+    const count = entries.length
 
-/**
- * Performs a case-insensitive and partial-matching search for a given value
- * inside an array of values and returns the found match
- * (with the original case being preserved). If none is found
- * an empty string is returned.
- *@public
- * @param {string} value
- * @param {string[]} entries
- * @returns {string}
- */
-function findMatchPartial(value, entries) {
-  if (!value || !entries || !(entries instanceof Array)) {
-    return ''
-  }
-
-  const count = entries.length
-
-  for (let i = 0; i < count; i++) {
-    if (insensitiveMatchPartial(entries[i], value)) {
-      return entries[i]
+    for (let i = 0; i < count; i++) {
+      if (insensitiveMatchFull(entries[i], value)) {
+        return entries[i]
+      }
     }
-  }
 
-  return ''
+    return ''
+  },
+  /**
+   * Performs a case-insensitive and partial-matching search for a given value
+   * inside an array of values and returns the found match
+   * (with the original case being preserved). If none is found
+   * an empty string is returned.
+   * @param {string} value
+   * @param {string[]} entries
+   * @returns {string}
+   */
+  partial: (value, entries) => {
+    if (!value || !entries || !(entries instanceof Array)) {
+      return ''
+    }
+
+    const count = entries.length
+
+    for (let i = 0; i < count; i++) {
+      if (insensitiveMatchPartial(entries[i], value)) {
+        return entries[i]
+      }
+    }
+
+    return ''
+  },
 }
 
 module.exports = {
   strIsIn,
   findMatch,
-  findMatchPartial,
 }
