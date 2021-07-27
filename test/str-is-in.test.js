@@ -1,5 +1,5 @@
 const chai = require('chai').assert
-const { strIsIn, findMatch, findMatchPartial } = require('../src/str-is-in')
+const { strIsIn, findMatch } = require('../src/str-is-in')
 
 describe('🧪 is-in tests 🧪', () => {
   it('should return false', () => {
@@ -43,18 +43,18 @@ describe('🧪 is-in tests 🧪', () => {
   }) // #8
 
   it('should return true', () => {
-    chai.equal(findMatch('WORLD', ['abc', 'cde', 'world', 'HellobinaryWorld']), 'world')
+    chai.equal(findMatch.full('WORLD', ['abc', 'cde', 'world', 'HellobinaryWorld']), 'world')
   }) // #9
 
   it('should return an empty string', () => {
-    chai.isEmpty(findMatch('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld']))
+    chai.isEmpty(findMatch.full('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld']))
   }) // #10
 
   it('should return true', () => {
-    chai.equal(findMatchPartial('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld']), 'world-foo')
+    chai.equal(findMatch.partial('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld']), 'world-foo')
   }) // #11
 
   it('should return an empty string', () => {
-    chai.isEmpty(findMatchPartial('WORLD', ['abc', 'cde', 'w-orld', 'HellobinaryWIorld']))
+    chai.isEmpty(findMatch.partial('WORLD', ['abc', 'cde', 'w-orld', 'HellobinaryWIorld']))
   }) // #12
 })
