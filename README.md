@@ -2,7 +2,12 @@
 
 🧵 `strIsIn()` provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍
 
-Since `v.1.1.0` a new object `findMatch` is available and it provides ways for finding matches while returning the match itself and not a `boolean` as the `strIsIn()` does.
+<br>
+<br>
+
+✨ Since `v.2.0.0` `str-is-in` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
+
+✨ Since `v.1.1.0` a new object `findMatch` is available and it provides ways for finding matches while returning the match itself and not a `boolean` as the `strIsIn()` does.
 
 <br>
 
