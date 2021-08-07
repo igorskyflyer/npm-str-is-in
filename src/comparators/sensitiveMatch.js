@@ -3,6 +3,4 @@
  * @param {string} value
  * @returns {boolean}
  */
-const sensitiveMatchFull = (entry, value) => entry === value
-
-module.exports = { sensitiveMatchFull }
+export const sensitiveMatchFull = (entry, value) => entry === value
