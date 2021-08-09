@@ -1,5 +1,5 @@
-import { sensitiveMatchFull } from './comparators/sensitiveMatch.js'
-import { insensitiveMatchFull, insensitiveMatchPartial } from './comparators/insensitiveMatch.js'
+const { sensitiveMatchFull } = require('./comparators/sensitiveMatch')
+const { insensitiveMatchFull, insensitiveMatchPartial } = require('./comparators/insensitiveMatch')
 
 /**
  * @callback ComparatorCallback
@@ -23,7 +23,7 @@ import { insensitiveMatchFull, insensitiveMatchPartial } from './comparators/ins
  * @param {ComparatorCallback} [comparator]
  * @returns {boolean}
  */
-export function strIsIn(value, entries, comparator) {
+function strIsIn(value, entries, comparator) {
   if (!value || !entries || !(entries instanceof Array)) {
     return false
   }
@@ -46,7 +46,7 @@ export function strIsIn(value, entries, comparator) {
 /**
  * @type {Finder} Provides methods for finding matches.
  */
-export const findMatch = {
+const findMatch = {
   full: (value, entries) => {
     if (!value || !entries || !(entries instanceof Array)) {
       return ''
@@ -78,3 +78,5 @@ export const findMatch = {
     return ''
   },
 }
+
+module.exports = { strIsIn, findMatch }
