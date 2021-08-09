@@ -1,5 +1,5 @@
-import { assert as chai } from 'chai'
-import { strIsIn, findMatch } from '../src/main.js'
+const chai = require('chai').assert
+const { strIsIn, findMatch } = require('../src/index.js')
 
 describe('🧪 is-in tests 🧪', () => {
   it('should return false', () => {
