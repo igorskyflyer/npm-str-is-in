@@ -1,6 +1,6 @@
 {
 	"name": "@igor.dvlpr/str-is-in",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"description": "🧵 Provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍",
 	"type": "module",
 	"engines": {
