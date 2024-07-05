@@ -1,6 +1,6 @@
 ## 📒 Changelog
 
-### of [@igor.dvlpr/$pkg](https://github.com/igorskyflyer/$repo)
+### of [@igor.dvlpr/str-is-in](https://github.com/igorskyflyer/npm-str-is-in)
 
 <br>
 
