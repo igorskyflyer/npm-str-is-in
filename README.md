@@ -1,19 +1,38 @@
 ## `" ".IsIn([ ])`
 
-🧵 `strIsIn()` provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍
+<br>
+
+🧵 Provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍
 
 <br>
 <br>
 
-✨ Since `v.2.0.0` `str-is-in` is a hybrid module that supports both CommonJS (legacy) and ES modules, thanks to [Modern Module](https://github.com/igorskyflyer/npm-modern-module).
-
-✨ Since `v.1.1.0` a new object `findMatch` is available and it provides ways for finding matches while returning the match itself and not a `boolean` as the `strIsIn()` does.
+<div align="center">
+	<blockquote>
+		<br>
+		<h4>💖 Support further development</h4>
+		<span>I work hard for every project, including this one and your support means a lot to me!
+		<br>
+		Consider buying me a coffee. ☕
+		<br>
+		<strong>Thank you for supporting my efforts! 🙏😊</strong></span>
+		<br>
+		<br>
+		<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
+		<br>
+		<br>
+		<a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
+		<br>
+		<br>
+		<br>
+	</blockquote>
+</div>
 
 <br>
 
-### Usage
+## 🕵🏼 Usage
 
-Install it first,
+Install it by executing:
 
 ```shell
 npm i "@igor.dvlpr/str-is-in"
@@ -21,7 +40,7 @@ npm i "@igor.dvlpr/str-is-in"
 
 <br>
 
-### API
+## 🤹🏼 API
 
 #### ComparatorCallback
 
@@ -66,7 +85,7 @@ Performs a case-insensitive and partial-matching search for a given value inside
 ### Examples
 
 ```js
-const { strIsIn, findMatch } = require('@igor.dvlpr/str-is-in')
+import { strIsIn, findMatch } from '@igor.dvlpr/str-is-in'
 
 // #1 - use default Comparator, non-existent string, full match
 console.log(strIsIn('bin', ['abc', 'cde', 'def', 'binary'])) // prints false
@@ -106,3 +125,40 @@ console.log(findMatch.full('WORLD', ['abc', 'cde', 'world', 'HellobinaryWorld'])
 // #10 - partial match-finding
 console.log(findMatch.partial('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld'])) // prints 'world-foo'
 ```
+
+---
+
+## 🪪 License
+
+Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-str-is-in/blob/main/LICENSE).
+
+---
+
+## 🧬 Related
+
+[@igor.dvlpr/pathexists](https://www.npmjs.com/package/@igor.dvlpr/pathexists)
+
+> _🧲 Provides ways of properly checking if a path exists inside a given array of files/directories both on Windows and UNIX-like operating systems. 🗺_
+
+[@igor.dvlpr/valid-path](https://www.npmjs.com/package/@igor.dvlpr/valid-path)
+
+> _🧰 Provides ways of testing whether a given value can be a valid file/directory name. 🏜_
+
+[@igor.dvlpr/regkeys](https://www.npmjs.com/package/@igor.dvlpr/regkeys)
+
+> _📚 An NPM package for fetching Windows registry keys. 🗝_
+
+[@igor.dvlpr/extendable-string](https://www.npmjs.com/package/@igor.dvlpr/extendable-string)
+
+> _🦀 ExtendableString allows you to create strings on steroids that have custom transformations applied to them, unlike common, plain strings. 🪀_
+
+[@igor.dvlpr/normalized-string](https://www.npmjs.com/package/@igor.dvlpr/normalized-string)
+
+> _💊 NormalizedString provides you with a String type with consistent line-endings, guaranteed. 📮_
+
+<br>
+<br>
+
+>
+> Provided by **Igor Dimitrijević** ([*@igorskyflyer*](https://github.com/igorskyflyer/)).
+>
