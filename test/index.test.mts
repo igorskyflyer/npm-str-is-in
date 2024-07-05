@@ -1,67 +1,102 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-import { describe } from 'vitest'
+import { assert, describe, test } from 'vitest'
+import { findMatch, strIsIn } from '../src/index.mjs'
 
 describe('🧪 strIsIn tests 🧪', () => {
-  import { assert as chai } from 'chai'
-import { strIsIn, findMatch } from '../src/index.js'
+	test('should return false', () => {
+		// @ts-expect-error
+		assert.isFalse(strIsIn('bin', ['abc', 'cde', 'def', 'binary']))
+	}) // #1
 
-describe('🧪 is-in tests 🧪', () => {
-  it('should return false', () => {
-    chai.isFalse(strIsIn('bin', ['abc', 'cde', 'def', 'binary']))
-  }) // #1
+	test('should return true', () => {
+		// @ts-expect-error
+		assert.isTrue(strIsIn('bin', ['abc', 'cde', 'bin', 'adc']))
+	}) // #2
 
-  it('should return true', () => {
-    chai.isTrue(strIsIn('bin', ['abc', 'cde', 'bin', 'adc']))
-  }) // #2
+	test('should return false', () => {
+		// @ts-expect-error
+		assert.isFalse(strIsIn('bin', []))
+	}) // #3
 
-  it('should return false', () => {
-    chai.isFalse(strIsIn('bin', []))
-  }) // #3
+	test('should return true', () => {
+		assert.isTrue(
+			strIsIn(
+				'bin',
+				['abc', 'cde', 'def', 'binary'],
+				(entry, value) => entry.indexOf(value) > -1
+			)
+		)
+	}) // #4
 
-  it('should return true', () => {
-    chai.isTrue(strIsIn('bin', ['abc', 'cde', 'def', 'binary'], (entry, value) => entry.indexOf(value) > -1))
-  }) // #4
+	test('should return true', () => {
+		assert.isTrue(
+			strIsIn(
+				'bin',
+				['abc', 'cde', 'def', 'HellobinaryWorld'],
+				(entry, value) => entry.indexOf(value) > -1
+			)
+		)
+	}) // #5
 
-  it('should return true', () => {
-    chai.isTrue(strIsIn('bin', ['abc', 'cde', 'def', 'HellobinaryWorld'], (entry, value) => entry.indexOf(value) > -1))
-  }) // #5
+	test('should return false', () => {
+		assert.isFalse(
+			strIsIn(
+				't',
+				['abc', 'cde', 'def', 'HellobinaryWorld'],
+				(entry, value) => entry.toLowerCase() === value.toLowerCase()
+			)
+		)
+	}) // #6
 
-  it('should return false', () => {
-    chai.isFalse(
-      strIsIn('t', ['abc', 'cde', 'def', 'HellobinaryWorld'], (entry, value) => entry.toLowerCase() === value.toLowerCase())
-    )
-  }) // #6
+	test('should return true', () => {
+		assert.isTrue(
+			strIsIn(
+				'WORLD',
+				['abc', 'cde', 'def', 'world'],
+				(entry, value) => entry.toLowerCase() === value.toLowerCase()
+			)
+		)
+	}) // #7
 
-  it('should return true', () => {
-    chai.isTrue(strIsIn('WORLD', ['abc', 'cde', 'def', 'world'], (entry, value) => entry.toLowerCase() === value.toLowerCase()))
-  }) // #7
+	test('should return true', () => {
+		assert.isTrue(
+			strIsIn(
+				'WORLD',
+				['abc', 'cde', 'def', 'HellobinaryWorld'],
+				(entry, value) => entry.toLowerCase().indexOf(value.toLowerCase()) > -1
+			)
+		)
+	}) // #8
 
-  it('should return true', () => {
-    chai.isTrue(
-      strIsIn(
-        'WORLD',
-        ['abc', 'cde', 'def', 'HellobinaryWorld'],
-        (entry, value) => entry.toLowerCase().indexOf(value.toLowerCase()) > -1
-      )
-    )
-  }) // #8
+	test('should return true', () => {
+		assert.equal(
+			findMatch.full('WORLD', ['abc', 'cde', 'world', 'HellobinaryWorld']),
+			'world'
+		)
+	}) // #9
 
-  it('should return true', () => {
-    chai.equal(findMatch.full('WORLD', ['abc', 'cde', 'world', 'HellobinaryWorld']), 'world')
-  }) // #9
+	test('should return an empty string', () => {
+		assert.isEmpty(
+			findMatch.full('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld'])
+		)
+	}) // #10
 
-  it('should return an empty string', () => {
-    chai.isEmpty(findMatch.full('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld']))
-  }) // #10
+	test('should return true', () => {
+		assert.equal(
+			findMatch.partial('WORLD', [
+				'abc',
+				'cde',
+				'world-foo',
+				'HellobinaryWorld'
+			]),
+			'world-foo'
+		)
+	}) // #11
 
-  it('should return true', () => {
-    chai.equal(findMatch.partial('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld']), 'world-foo')
-  }) // #11
-
-  it('should return an empty string', () => {
-    chai.isEmpty(findMatch.partial('WORLD', ['abc', 'cde', 'w-orld', 'HellobinaryWIorld']))
-  }) // #12
-})
-
+	test('should return an empty string', () => {
+		assert.isEmpty(
+			findMatch.partial('WORLD', ['abc', 'cde', 'w-orld', 'HellobinaryWIorld'])
+		)
+	}) // #12
 })
