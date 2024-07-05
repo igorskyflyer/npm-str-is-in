@@ -4,17 +4,8 @@
 
 <br>
 
-## v
+## v3.0.0
 
-<p align="right"><em>--2024</em></p>
+<p align="right"><em>06-Jul-2024</em></p>
 
-- 
-
-<br>
-<br>
-
-## v1.0.0
-
-<p align="right"><em>--2024</em></p>
-
-- **🚀 launch**: initial release 🎉
+- **💻 dev**: migrate to TypeScript and ESM-only
