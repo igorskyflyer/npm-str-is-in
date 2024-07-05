@@ -1,6 +1,9 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-import { insensitiveMatchPartial } from './comparators/insensitiveMatch.mjs'
+import {
+	insensitiveMatchFull,
+	insensitiveMatchPartial
+} from './comparators/insensitiveMatch.mjs'
 import { sensitiveMatchFull } from './comparators/sensitiveMatch.mjs'
 
 type ComparatorCallback = (entry: string, value: string) => boolean
@@ -49,7 +52,7 @@ export function strIsIn(
  */
 export const findMatch: Finder = {
 	full: (value: string, entries: string[]) => {
-		return find(value, entries, sensitiveMatchFull)
+		return find(value, entries, insensitiveMatchFull)
 	},
 	partial: (value: string, entries: string[]) => {
 		return find(value, entries, insensitiveMatchPartial)
