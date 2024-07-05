@@ -1,82 +1,82 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-import { insensitiveMatchFull, insensitiveMatchPartial } from './comparators/insensitiveMatch.js'
-import { sensitiveMatchFull } from './comparators/sensitiveMatch.js'
+import { insensitiveMatchPartial } from './comparators/insensitiveMatch.mjs'
+import { sensitiveMatchFull } from './comparators/sensitiveMatch.mjs'
 
-/**
- * @callback ComparatorCallback
- * @param {string} entry
- * @param {string} value
- * @returns {boolean}
- */
+type ComparatorCallback = (entry: string, value: string) => boolean
 
-/**
- * @typedef Finder
- * @property {(value: string, entries: string[]) => string} full Performs a case-insensitive and full-matching search for a given value inside an array of values and returns the found match (with the original case being preserved). If none is found an empty string is returned.
- * @property {(value: string, entries: string[]) => string} partial Performs a case-insensitive and partial-matching search for a given value inside an array of values and returns the found match (with the original case being preserved). If none is found an empty string is returned.
- */
+type Finder = {
+	/**
+	 * Performs a case-insensitive and full-matching search for a given value inside an array of values and returns the found match (with the original case being preserved). If none is found an empty string is returned.
+	 */
+	full: (value: string, entries: string[]) => string
+	/**
+	 * Performs a case-insensitive and partial-matching search for a given value inside an array of values and returns the found match (with the original case being preserved). If none is found an empty string is returned.
+	 */
+	partial: (value: string, entries: string[]) => string
+}
 
 /**
  * Checks whether the given String is present
  * in the provided array of Strings, full-matching, case-sensitive.
- *@public
- * @param {string} value
- * @param {string[]} entries
- * @param {ComparatorCallback} [comparator]
- * @returns {boolean}
  */
-export function strIsIn(value, entries, comparator) {
-  if (!value || !entries || !(entries instanceof Array)) {
-    return false
-  }
+export function strIsIn(
+	value: string,
+	entries: string[],
+	comparator: ComparatorCallback
+): boolean {
+	if (!value || !entries || !Array.isArray(entries)) {
+		return false
+	}
 
-  const count = entries.length
+	const count: number = entries.length
 
-  if (typeof comparator !== 'function') {
-    comparator = sensitiveMatchFull
-  }
+	if (typeof comparator !== 'function') {
+		comparator = sensitiveMatchFull
+	}
 
-  for (let i = 0; i < count; i++) {
-    if (comparator(entries[i], value)) {
-      return true
-    }
-  }
+	for (let i = 0; i < count; i++) {
+		if (comparator(entries[i], value)) {
+			return true
+		}
+	}
 
-  return false
+	return false
 }
 
 /**
- * @type {Finder} Provides methods for finding matches.
+ * Provides methods for finding matches.
  */
-export const findMatch = {
-  full: (value, entries) => {
-    if (!value || !entries || !(entries instanceof Array)) {
-      return ''
-    }
+export const findMatch: Finder = {
+	full: (value: string, entries: string[]) => {
+		return find(value, entries, sensitiveMatchFull)
+	},
+	partial: (value: string, entries: string[]) => {
+		return find(value, entries, insensitiveMatchPartial)
+	}
+}
 
-    const count = entries.length
+function find(
+	value: string,
+	entries: string[],
+	comparator: ComparatorCallback
+): string {
+	if (
+		!value ||
+		!entries ||
+		!Array.isArray(entries) ||
+		typeof comparator !== 'function'
+	) {
+		return ''
+	}
 
-    for (let i = 0; i < count; i++) {
-      if (insensitiveMatchFull(entries[i], value)) {
-        return entries[i]
-      }
-    }
+	const count: number = entries.length
 
-    return ''
-  },
-  partial: (value, entries) => {
-    if (!value || !entries || !(entries instanceof Array)) {
-      return ''
-    }
+	for (let i = 0; i < count; i++) {
+		if (comparator(entries[i], value)) {
+			return entries[i]
+		}
+	}
 
-    const count = entries.length
-
-    for (let i = 0; i < count; i++) {
-      if (insensitiveMatchPartial(entries[i], value)) {
-        return entries[i]
-      }
-    }
-
-    return ''
-  },
+	return ''
 }
