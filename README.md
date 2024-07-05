@@ -84,7 +84,7 @@ Performs a case-insensitive and partial-matching search for a given value inside
 
 ### Examples
 
-```js
+```ts
 import { strIsIn, findMatch } from '@igor.dvlpr/str-is-in'
 
 // #1 - use default Comparator, non-existent string, full match
