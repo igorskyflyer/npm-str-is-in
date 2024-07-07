@@ -8,7 +8,7 @@
 
 <p align="right"><em>07-Jul-2024</em></p>
 
-- **✅ fix**: make the comparator parameter of `strIsIn` optional
+- **✅ fix**: make the comparator parameter of `strIsIn()` optional
 
 <br>
 <br>
