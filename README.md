@@ -57,7 +57,7 @@ type ComparatorCallback = (entry: string, value: string) => boolean
 #### strIsIn()
 
 ```ts
-strIsIn(value: string, entries: string[], comparator: ComparatorCallback): boolean
+strIsIn(value: string, entries: string[], comparator?: ComparatorCallback): boolean
 ```
 
 Checks whether the given String is present in the provided array of Strings.
