@@ -4,6 +4,15 @@
 
 <br>
 
+## v3.0.2
+
+<p align="right"><em>07-Jul-2024</em></p>
+
+- **📜 docs**: fix `strIsIn()` signature in the documentation
+
+<br>
+<br>
+
 ## v3.0.1
 
 <p align="right"><em>07-Jul-2024</em></p>
