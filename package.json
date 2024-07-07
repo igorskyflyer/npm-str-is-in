@@ -1,47 +1,45 @@
 {
-	"name": "@igor.dvlpr/str-is-in",
-	"version": "3.0.0",
-	"description": "🧵 Provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍",
-	"sideEffects": false,
-	"engines": {
-		"node": ">=20.0"
-	},
-	"types": "./dist/index.d.mts",
-	"main": "./dist/index.mjs",
-	"module": "./dist/index.mjs",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "tsc",
-		"test": "vitest --run",
-		"debug": "vitest",
-		"pub": "npm test && npm run build && npm publish --access public"
-	},
-	"keywords": [
-		"string",
-		"is-in",
-		"array",
-		"check",
-		"exists",
-		"igorskyflyer",
-		"igor.dvlpr"
-	],
-	"license": "MIT",
-	"author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
-	"funding": "https://ko-fi.com/igorskyflyer",
-	"homepage": "https://github.com/igorskyflyer/npm-str-is-in",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/igorskyflyer/npm-str-is-in.git"
-	},
-	"bugs": {
-		"url": "https://github.com/igorskyflyer/npm-str-is-in/issues"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.8.3",
-		"@types/node": "^20.14.9",
-		"typescript": "^5.5.3",
-		"vitest": "^1.6.0"
-	}
+  "name": "@igor.dvlpr/str-is-in",
+  "version": "3.0.1",
+  "description": "🧵 Provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.0"
+  },
+  "types": "./dist/index.d.mts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest --run",
+    "debug": "vitest",
+    "pub": "npm test && npm run build && npm publish --access public"
+  },
+  "keywords": [
+    "string",
+    "is-in",
+    "array",
+    "check",
+    "exists",
+    "igorskyflyer",
+    "igor.dvlpr"
+  ],
+  "license": "MIT",
+  "author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
+  "funding": "https://ko-fi.com/igorskyflyer",
+  "homepage": "https://github.com/igorskyflyer/npm-str-is-in",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorskyflyer/npm-str-is-in.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igorskyflyer/npm-str-is-in/issues"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  }
 }
