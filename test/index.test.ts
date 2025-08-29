@@ -1,7 +1,7 @@
 // Author: Igor Dimitrijević (@igorskyflyer)
 
 import { assert, describe, test } from 'vitest'
-import { findMatch, strIsIn } from '../src/index.mjs'
+import { findMatch, strIsIn } from '../src/index.js'
 
 describe('🧪 strIsIn tests 🧪', () => {
   test('should return false', () => {

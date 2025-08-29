@@ -3,8 +3,8 @@
 import {
   insensitiveMatchFull,
   insensitiveMatchPartial
-} from './comparators/insensitiveMatch.mjs'
-import { sensitiveMatchFull } from './comparators/sensitiveMatch.mjs'
+} from './comparators/insensitiveMatch.js'
+import { sensitiveMatchFull } from './comparators/sensitiveMatch.js'
 
 type ComparatorCallback = (entry: string, value: string) => boolean
 
