@@ -1,43 +1,62 @@
-## `" ".IsIn([ ])`
-
-<br>
-
-🧵 Provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍
-
-<br>
-<br>
-
 <div align="center">
-	<blockquote>
-		<br>
-		<h4>💖 Support further development</h4>
-		<span>I work hard for every project, including this one and your support means a lot to me!
-		<br>
-		Consider buying me a coffee. ☕
-		<br>
-		<strong>Thank you for supporting my efforts! 🙏😊</strong></span>
-		<br>
-		<br>
-		<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
-		<br>
-		<br>
-		<a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
-		<br>
-		<br>
-		<br>
-	</blockquote>
+  <img src="https://raw.githubusercontent.com/igorskyflyer/npm-str-is-in/main/media/str-is-in.png" alt="Icon of StrIsIn" width="256" height="256">
+  <h1>StrIsIn</h1>
 </div>
 
 <br>
 
+<h4 align="center">
+  🧵 Provides ways of checking whether a String is present in an Array of Strings using custom Comparators. 🔍
+</h4>
+
+<br>
+<br>
+
+## 📃 Table of Contents
+
+- [Features](#-features)
+- [Usage](#-usage)
+- [API](#-api)
+- [Examples](#️-examples)
+- [Changelog](#-changelog)
+- [Support](#-support)
+- [License](#-license)
+- [Related](#-related)
+- [Author](#-author)
+
+<br>
+<br>
+
+## 🤖 Features
+
+- 🔍 Flexible matching - check strings with full or partial match modes
+- 🆎 Case‑sensitive or insensitive - choose the precision you need
+- ⚡ Fast lookups - loops through entries efficiently for quick results
+- 🎯 Custom comparators - plug in your own matching logic
+- 🛡 Safe defaults - validates inputs before running comparisons
+- 🧩 Reusable helpers - `strIsIn` for booleans, `findMatch` for actual matches
+- 📦 Lightweight & dependency‑free - minimal footprint, maximum utility
+
+<br>
+<br>
+
 ## 🕵🏼 Usage
 
-Install it by executing:
+Install it by executing any of the following, depending on your preferred package manager:
 
-```shell
-npm i "@igor.dvlpr/str-is-in"
+```bash
+pnpm add @igorskyflyer/str-is-in
 ```
 
+```bash
+yarn add @igorskyflyer/str-is-in
+```
+
+```bash
+npm i @igorskyflyer/str-is-in
+```
+
+<br>
 <br>
 
 ## 🤹🏼 API
@@ -81,11 +100,13 @@ findMatch.partial(value: string, entries: string[]): string
 Performs a case-insensitive and partial-matching search for a given value inside an array of values and returns the found match (with the original case being preserved). If none is found an empty string is returned.
 
 <br>
+<br>
 
-### Examples
+## 🗒️ Examples
+
 
 ```ts
-import { strIsIn, findMatch } from '@igor.dvlpr/str-is-in'
+import { strIsIn, findMatch } from '@igorskyflyer/str-is-in'
 
 // #1 - use default Comparator, non-existent string, full match
 console.log(strIsIn('bin', ['abc', 'cde', 'def', 'binary'])) // prints false
@@ -126,39 +147,65 @@ console.log(findMatch.full('WORLD', ['abc', 'cde', 'world', 'HellobinaryWorld'])
 console.log(findMatch.partial('WORLD', ['abc', 'cde', 'world-foo', 'HellobinaryWorld'])) // prints 'world-foo'
 ```
 
----
+<br>
+<br>
+
+## 📝 Changelog
+
+📑 The changelog is available here, [CHANGELOG.md](https://github.com/igorskyflyer/npm-str-is-in/blob/main/CHANGELOG.md).
+
+<br>
+<br>
 
 ## 🪪 License
 
 Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-str-is-in/blob/main/LICENSE).
 
----
+<br>
+<br>
+
+## 💖 Support
+
+<div align="center">
+  I work hard for every project, including this one and your support means a lot to me!
+  <br>
+  Consider buying me a coffee. ☕
+  <br>
+  <br>
+  <a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="180" height="46"></a>
+  <br>
+  <br>
+  <em>Thank you for supporting my efforts!</em> 🙏😊
+</div>
+
+<br>
+<br>
 
 ## 🧬 Related
 
-[@igor.dvlpr/pathexists](https://www.npmjs.com/package/@igor.dvlpr/pathexists)
+[@igorskyflyer/pathexists](https://www.npmjs.com/package/@igorskyflyer/pathexists)
 
 > _🧲 Provides ways of properly checking if a path exists inside a given array of files/directories both on Windows and UNIX-like operating systems. 🗺_
 
-[@igor.dvlpr/valid-path](https://www.npmjs.com/package/@igor.dvlpr/valid-path)
+[@igorskyflyer/valid-path](https://www.npmjs.com/package/@igorskyflyer/valid-path)
 
 > _🧰 Provides ways of testing whether a given value can be a valid file/directory name. 🏜_
 
-[@igor.dvlpr/regkeys](https://www.npmjs.com/package/@igor.dvlpr/regkeys)
+[@igorskyflyer/regkeys](https://www.npmjs.com/package/@igorskyflyer/regkeys)
 
 > _📚 An NPM package for fetching Windows registry keys. 🗝_
 
-[@igor.dvlpr/extendable-string](https://www.npmjs.com/package/@igor.dvlpr/extendable-string)
+[@igorskyflyer/extendable-string](https://www.npmjs.com/package/@igorskyflyer/extendable-string)
 
 > _🦀 ExtendableString allows you to create strings on steroids that have custom transformations applied to them, unlike common, plain strings. 🪀_
 
-[@igor.dvlpr/normalized-string](https://www.npmjs.com/package/@igor.dvlpr/normalized-string)
+[@igorskyflyer/normalized-string](https://www.npmjs.com/package/@igorskyflyer/normalized-string)
 
 > _💊 NormalizedString provides you with a String type with consistent line-endings, guaranteed. 📮_
 
 <br>
 <br>
+<br>
 
->
-> Provided by **Igor Dimitrijević** ([*@igorskyflyer*](https://github.com/igorskyflyer/)).
->
+## 👨🏻‍💻 Author
+Created by **Igor Dimitrijević** ([*@igorskyflyer*](https://github.com/igorskyflyer/)).
