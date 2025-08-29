@@ -6,7 +6,7 @@
 
 ## v3.1.0 (*29-Aug-2025*)
 
-- **✅ fix**: reduce branching complexity
+- **✅ fix**: reduce guards complexity
 - **💻 dev**: upgrade Node to >= v22
 - **💻 dev**: upgrade dependencies
 
