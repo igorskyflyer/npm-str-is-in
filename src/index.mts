@@ -28,7 +28,7 @@ export function strIsIn(
   entries: string[],
   comparator?: ComparatorCallback
 ): boolean {
-  if (!value || !entries || !Array.isArray(entries)) {
+  if (!(value && Array.isArray(entries))) {
     return false
   }
 
@@ -64,12 +64,7 @@ function find(
   entries: string[],
   comparator: ComparatorCallback
 ): string {
-  if (
-    !value ||
-    !entries ||
-    !Array.isArray(entries) ||
-    typeof comparator !== 'function'
-  ) {
+  if (!(value && Array.isArray(entries)) || typeof comparator !== 'function') {
     return ''
   }
 
